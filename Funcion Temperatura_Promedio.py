@@ -5,16 +5,17 @@ def temperaturas_promedio(ciudades):
         promedios_semanas = []
 
         for semana in ciudad:
+            #Calcular la temperatura promedio de cada semana
             temperatura_semana = [dia["temp"] for dia in semana]
             promedios_semana = sum(temperatura_semana) / len(temperatura_semana)
             promedios_ciudades.append(promedios_semana)
 
-
+        #Calcular la temperatura promedio de cada ciudad
         promedio_ciudad = sum(promedios_ciudades) / len(promedios_ciudades)
         promedios_semanas.append(promedio_ciudad)
 
     return promedios_ciudades
-
+#Uso de los datos de la tarea anterior
 temperaturas = [
     [  # Ciudad 1
         [  # Semana 1
@@ -134,6 +135,6 @@ temperaturas = [
 
 resultados = temperaturas_promedio(temperaturas)
 
-
+#Mostrar resultados
 for i, resultados in enumerate(resultados, 1):
     print(f"Temperatura promedio de la Ciudad {i}: {resultados:.2f}")
